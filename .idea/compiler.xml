@@ -6,11 +6,14 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="WebsterauntStore-Task" />
+        <module name="WebstaurantStoreTask" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="WebsterauntStore-Task" target="1.5" />
+      <module name="WebstaurantStoreTask" target="1.5" />
     </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="PREFER_TARGET_JDK_COMPILER" value="false" />
   </component>
 </project>
