@@ -25,11 +25,11 @@ class WebstaurantStoreMain {
         Thread.sleep(2000);
         addItemToCart(driver);
 
-        Thread.sleep(5000);
+        Thread.sleep(8000);
         openCartPage(driver);
 
         Thread.sleep(2000);
-        removeItemsFromCart(driver);
+        removeItemFromCart(driver);
 
         Thread.sleep(5000);
         driver.quit();

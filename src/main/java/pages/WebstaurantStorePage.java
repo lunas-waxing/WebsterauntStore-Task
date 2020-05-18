@@ -28,6 +28,7 @@ public class WebstaurantStorePage {
 
     static String addToCartBtnName = "addToCartButton";
 
+    //enters string intot he search box and clicks the search button
     public static void search(String searchText, WebDriver driver) {
         WebElement searchBox = driver.findElement(By.id(searchBoxID));
         WebElement searchBtn = driver.findElement(By.className(searchBtnClass));
@@ -37,11 +38,14 @@ public class WebstaurantStorePage {
         System.out.println("Search Complete");
     }
 
+    //iterates through every search result item on the page, checking that the title matches the desired
+    //keyword. Then clicks to the next page of results until there are no more pages of results to process
     public static void checkTitlesContain(String matchTitle, WebDriver driver) throws InterruptedException {
 
         do {
             WebElement nextPageBtn = driver.findElement(By.cssSelector(nextPageCss));
             List<WebElement> products = driver.findElements(By.className(productGridClass));
+            //every product on the page is evaluated
             for (WebElement product : products) {
                 if (!product.getText().contains(matchTitle)) {
                     System.out.println("Entry without desired keyword found.");
@@ -49,12 +53,13 @@ public class WebstaurantStorePage {
                 }
             }
             nextPageBtn.click();
-            Thread.sleep(2000);
+            Thread.sleep(4000);
             System.out.println("Loading next page of results.");
-        } while (driver.findElements(By.cssSelector(endOfResultsCss)).size() == 0);
+        } while (driver.findElements(By.cssSelector(endOfResultsCss)).size() == 0); //loop ends when css selector gets a result.
         System.out.println("Reached end of results successfully.");
     }
 
+    //add the first search result on page to cart and clicks through accessories menu if it appears
     public static void addItemToCart(WebDriver driver) throws InterruptedException {
         List<WebElement> addToCartBtns = driver.findElements(By.name(addToCartBtnName));
         addToCartBtns.get(0).click();
@@ -69,13 +74,15 @@ public class WebstaurantStorePage {
         System.out.println("Product added to cart.");
     }
 
+    //opens cart page from header cart button
     public static void openCartPage(WebDriver driver) {
         WebElement cartBtn = driver.findElement(By.className(cartClass));
         cartBtn.click();
         System.out.println("Cart page loading...");
     }
 
-    public static void removeItemsFromCart(WebDriver driver) throws InterruptedException {
+    //deletes item from cart
+    public static void removeItemFromCart(WebDriver driver) throws InterruptedException {
         Thread.sleep(5000);
         WebElement deleteCartItembtn = driver.findElement(By.className(deleteCartItemBtnClass));
         deleteCartItembtn.click();
