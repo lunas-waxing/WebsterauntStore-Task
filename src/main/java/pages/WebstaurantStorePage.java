@@ -87,6 +87,7 @@ public class WebstaurantStorePage {
         Thread.sleep(5000);
         WebElement deleteCartItembtn = driver.findElement(By.className(deleteCartItemBtnClass));
         deleteCartItembtn.click();
+        Thread.sleep(1000);
         WebElement cartEmpty = driver.findElement(By.className(emptyCartClass)); //if element is found, cart is empty
         System.out.println("Cart Emptied.");
     }
