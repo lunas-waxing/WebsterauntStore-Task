@@ -21,6 +21,7 @@ public class WebstaurantStorePage {
     static String accessoriesMenuClass = "modal--accessories";
     static String cartClass = "btn-glass-cart";
     static String deleteCartItemBtnClass = "deleteCartItemButton";
+    static String emptyCartClass = "empty-car__text";
 
     static String nextPageCss = ".icon-right-open";
     static String accessoriesCartBtnCss = ".modal--accessories .btn-cart";
@@ -86,6 +87,7 @@ public class WebstaurantStorePage {
         Thread.sleep(5000);
         WebElement deleteCartItembtn = driver.findElement(By.className(deleteCartItemBtnClass));
         deleteCartItembtn.click();
+        WebElement cartEmpty = driver.findElement(By.className(emptyCartClass)); //if element is found, cart is empty
         System.out.println("Cart Emptied.");
     }
 }
