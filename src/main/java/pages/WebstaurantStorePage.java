@@ -21,7 +21,7 @@ public class WebstaurantStorePage {
     static String accessoriesMenuClass = "modal--accessories";
     static String cartClass = "btn-glass-cart";
     static String deleteCartItemBtnClass = "deleteCartItemButton";
-    static String emptyCartClass = "empty-car__text";
+    static String emptyCartClass = "empty-cart__text";
 
     static String nextPageCss = ".icon-right-open";
     static String accessoriesCartBtnCss = ".modal--accessories .btn-cart";
